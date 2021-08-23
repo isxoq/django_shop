@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <!--Slider Start-->
+    <div class="paralax-section-slide-data" style="background-image:url('img/banner6.jpg')"></div>
+    <!--Slider End-->
+
+    <!-- START MAIN CONTENT  -->
+    <div class="signup-form">
+
+        <!--  START MANAGE CONTEND  -->
+        <div class="about_content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12  col-lg-8 offset-lg-2 text-center wow slideInUp">
+                        <h1 class="heading">Registeration</h1>
+                        <p class="para_text mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolores
+                            explicabo laudantium, omnis provident quam reiciendis voluptatum?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--  START FORM SECTION  -->
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-md-12 col-sm-12 pr-lg-0 whitebox wow slideInLeft">
+                    <div class="widget logincontainer register-account">
+                        <h3 class="bottom35 text-center text-md-left">Create Your Account </h3>
+                        <form class="getin_form border-form" id="register" method="POST">
+                            {{ form.errors }}
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group bottom35">
+                                        <label for="registerName" class="d-none"></label>
+                                        <input name="first_name" class="form-control" type="text"
+                                               placeholder="First Name:" required=""
+                                               id="registerName">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group bottom35">
+                                        <label for="registerName" class="d-none"></label>
+                                        <input name="last_name" class="form-control" type="text"
+                                               placeholder="Last Name:" required=""
+                                               id="registerName">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group bottom35">
+                                        <label for="registerName" class="d-none"></label>
+                                        <input name="email" class="form-control" type="text"
+                                               placeholder="Email:" required=""
+                                               id="registerName">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group bottom35">
+                                        <label for="registerName" class="d-none"></label>
+                                        <input name="phone" class="form-control" type="text"
+                                               placeholder="Phone" required=""
+                                               id="registerName">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 register-btn">
+                                    <button type="submit" class="btn pink-gradient-btn-into-black">Register</button>
+                                    <p class="top20 SignInclass"> Already have an account? &nbsp;<a href="login.html">Sign
+                                        In</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 registeration-detail wow slideInRight" data-wow-delay=".9s">
+                    <div class="heading-area pl-lg-4 p-0">
+                        <h6 class="sub-title text-left">Basic info about Registration</h6>
+                        <h2 class="title">Benefit of Registration</h2>
+                        <p class="paragraph">There are many variations of passages of Lorem Ipsum available be the
+                            majority have suffered alteration in some form, by injected humour or randomised words.
+                            <!--List-->
+                        <ul class="about-list">
+
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-2"></i> <span>Lorem ipsum dolor amet, consectetur adipiscing.</span>
+                            </li>
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-2"></i> <span>Morbi ornare nibh id cursus vestibulum.</span>
+                            </li>
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-3"></i> <span>Duis vitae lectus facilisis, tristique lorem sit amet males.</span>
+                            </li>
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-2"></i> <span>It is a long established fact that a distracted</span>
+                            </li>
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-2"></i> <span>Morbi ornare nibh id cursus vestibulum.</span>
+                            </li>
+                            <li><i class="lni-check-mark-circle a-icon  mr-lg-3 mr-sm-2"></i> <span>It is a Lorem ipsum dolor fact  cursus vestibulum.</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--  END FORM SECTION  -->
+
+        </div>
+        <!--  END MANAGE CONTEND  -->
+
+
+    </div>
+    <!-- END MAIN CONTENT  -->
+
+{% endblock %}

@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from catalog import views
+from accounts import views
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('register', views.register),
+    path('verify/<str:phone>', views.verify, name='verify'),
 ]
