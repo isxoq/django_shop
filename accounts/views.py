@@ -3,7 +3,7 @@ import time
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, VerifyCode
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from .models import TempNumber
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -14,6 +14,11 @@ from django.core.exceptions import ObjectDoesNotExist
 def send_sms(phone):
     # Logic
     return 12345678
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 
 def register(request):

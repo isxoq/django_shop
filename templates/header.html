@@ -1,5 +1,4 @@
 {% load  static %}
-{% load my_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +167,27 @@
                                 <i class="fas fa-caret-up user-utiliity-caret"></i>
                                 <h6 class="user-utiliity-title">MY ACCOUNT </h6>
                                 <hr>
-                                {{ test }}
+                                {% if user.is_authenticated %}
+                                    <ul class="text-left">
+                                        <li>
+                                            <a href="/accounts/profile">{{ user }}</a>
+
+                                        </li>
+                                        <li>
+                                            <a href="/accounts/chiqish">Logout</a>
+                                        </li>
+                                    </ul>
+                                {% else %}
+                                    <ul class="text-left">
+                                        <li>
+                                            <a href="/accounts/login">Login</a>
+
+                                        </li>
+                                        <li>
+                                            <a href="/accounts/register">Register</a>
+                                        </li>
+                                    </ul>
+                                {% endif %}
                             </div>
 
                         </li>

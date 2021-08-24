@@ -18,6 +18,8 @@ from django.urls import path, include
 from accounts import views
 
 urlpatterns = [
+    path('login', views.register),
     path('register', views.register),
+    path('chiqish', views.logout_view),
     path('verify/<str:phone>', views.verify, name='verify'),
 ]
