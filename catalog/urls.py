@@ -19,4 +19,5 @@ from catalog import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('product/detail/<str:slug>', views.detail, name="product_detail"),
 ]

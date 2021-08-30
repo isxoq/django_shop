@@ -1,0 +1,45 @@
+salkom
+
+{% for item in carts %}
+    <tr>
+        <td>
+            <div class="d-table product-detail-cart">
+
+                <div class="media">
+                    <div class="row no-gutters">
+
+                        <div class="col-12 col-lg-2 product-detail-cart-image">
+                            <a class="shopping-product" href="#"><img
+                                    src="img/shop-cart-thumb1.jpg"
+                                    alt="Generic placeholder image"></a>
+                        </div>
+
+                        <div class="col-12 col-lg-10 mt-auto product-detail-cart-data">
+                            <div class="media-body ml-lg-3">
+                                <h4 class="product-name"><a
+                                        href="product-detail.html">{{ item.product_id.name }}</a>
+                                </h4>
+                                <p class="product-des">We offer the most complete in the
+                                    country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <h4 class="text-center amount">$130.00</h4>
+        </td>
+        <td class="text-center">
+            <div class="quote text-center mt-1">
+                <input type="number" placeholder="1" class="quote" min="1" max="100">
+            </div>
+        </td>
+        <td>
+            <h4 class="text-center amount">UZS {{ item.product_id.price }}</h4>
+        </td>
+        <td class="text-center"><a data-id="{{ item.product_id.id }}"
+                                   class="btn-close delete_from_cart" href="#."><i
+                class="lni-trash"></i></a>
+        </td>
+    </tr>{% endfor %}

@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -12,7 +13,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField()
+    description = RichTextField()
     image = models.ImageField(upload_to="static_files/images/product")
     slug = models.CharField(max_length=50)
     category_id = models.ForeignKey('Category', models.CASCADE, 'category_to_product')

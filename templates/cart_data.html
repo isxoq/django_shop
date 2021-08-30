@@ -1,0 +1,18 @@
+{% load static %}
+
+{% for cart in carts %}
+
+    <div class="media">
+        <div class="img-holder ml-1 mr-2">
+            <a href="#"><img src="{% static "{{ cart.product.image.url }}" %}"
+                             class="align-self-center" alt="cartitem"></a>
+        </div>
+        <div class="media-body mt-auto mb-auto">
+            <h5 class="name"><a href="#">{{ cart.product_id.name }}</a></h5>
+            <p class="category">{{ cart.product_id.category_id.name }}</p>
+            <p class="price"><span>${{ cart.product_id.price }}</span>(x{{ cart.quantity }}) <a href="#"> <i
+                    class="fa fa-trash dustbin"></i></a></p>
+        </div>
+    </div>
+
+{% endfor %}
