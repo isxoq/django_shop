@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure--j%(o790wuwp!((_xa_2619xe6sj+jpa9x#=^jek68sien5-xq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -38,9 +38,21 @@ INSTALLED_APPS = [
     'catalog',
     'accounts',
     'ckeditor',
-    'order'
+    'order',
+    'click_module'
 ]
+PAYMENT_HOST = "127.0.0.1:8000"
+PAYMENT_MODEL = "order.Order"
+PAYMENT_VARIANTS = {
 
+    'click': ('click.ClickProvider', {
+        'merchant_id': 7400,
+        'merchant_service_id': 15787,
+        'merchant_user_id': 16167,
+        'secret_key': 't0N3svGrjKMMa'
+    })
+
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

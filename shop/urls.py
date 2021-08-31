@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('catalog.urls')),
     path('accounts/', include('accounts.urls')),
     path('order/', include('order.urls')),
+    path('click_module/', include('click_module.urls')),
 ]
