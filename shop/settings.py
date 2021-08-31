@@ -46,9 +46,9 @@ PAYMENT_MODEL = "order.Order"
 PAYMENT_VARIANTS = {
 
     'click': ('click.ClickProvider', {
-        'merchant_id': 7400,
-        'merchant_service_id': 15787,
-        'merchant_user_id': 16167,
+        'merchant_id': "sdad",
+        'merchant_service_id': "Adasd",
+        'merchant_user_id': "asdasd",
         'secret_key': 't0N3svGrjKMMa'
     })
 
