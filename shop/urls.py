@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from shop import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,4 +23,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('order/', include('order.urls')),
     path('click_module/', include('click_module.urls')),
+    path('setlanguage/<str:lang>', views.setlanguage, name="setlanguage")
+
 ]

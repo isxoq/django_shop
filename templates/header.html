@@ -1,5 +1,6 @@
 {% load  static %}
-
+{% load i18n %}
+{% load my_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,7 +134,7 @@
                                 {% else %}
                                     <ul class="text-left">
                                         <li>
-                                            <a href="/accounts/login">Login</a>
+                                            <a href="/accounts/login">{% t 'logintext' %}</a>
 
                                         </li>
                                         <li>
@@ -439,15 +440,26 @@
                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PAGES</a>
                                         <div class="dropdown-menu">
                                             <ul>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a
-                                                        class="dropdown-item" href="shop/product-listing.html">Listing
-                                                    One</a></li>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a
-                                                        class="dropdown-item" href="shop/product-detail.html">Detail
-                                                    Page</a></li>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a
-                                                        class="dropdown-item" href="shop/standalone.html">StandAlone
-                                                    Page</a></li>
+                                                <li class="drop-down">
+                                                    {% get_available_languages as LANGUAGES %}
+                                                    {% get_current_language as LANGUAGE_CODE %}
+                                                    {#                    {% for lang in LANGUAGES %}#}
+                                                    {% for i,j in LANGUAGES %}
+                                                        {% if i == LANGUAGE_CODE %}
+                                                            <a href="#">{{ j }}</a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    <ul>
+                                                        {% for i,j in LANGUAGES %}
+                                                            {% if i != LANGUAGE_CODE %}
+                                                                <li>
+                                                                    <a href="{% url 'setlanguage' i %}">{{ j }}</a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
                                     </li>

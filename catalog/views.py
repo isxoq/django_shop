@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Category, Product
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils import translation
 
 
 # Create your views here.
@@ -16,9 +17,9 @@ def detail(request, slug):
 
 def index(request):
 
-
     categories = Category.objects.all()
-    products = Product.objects.all()
+    products = Product.objects.all().translate(translation.get_language())
+    print(products[3].name)
 
     return render(request, 'index.html', {
         "categories": categories,

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'accounts',
     'ckeditor',
     'order',
+    'translations',
+    'translate',
     'click_module'
 ]
 PAYMENT_HOST = "127.0.0.1:8000"
@@ -58,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'shop.middleware.LanguageMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -78,6 +82,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'my_tags': 'shop.templatetags.shoptags',
+            }
         },
     },
 ]
@@ -115,9 +122,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz'
 
-TIME_ZONE = 'UTC'
+LANGUAGES = (  # supported languages
+    ('en', 'English'),
+    ('uz', "O'zbekcha"),
+    ('ru', 'Русский'),
+)
+
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
